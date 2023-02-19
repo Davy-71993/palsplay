@@ -84,13 +84,16 @@ export const prepareAssetForSaving = async(asset) => {
  * @returns list of songs got from youtube.
  */
 export const searchYoutube = async(term='') => {
+    const api_key = process.env.RAPIDAPI_T_ONE_CONVERTER_KEY
+
+    console.log(api_key)
 
     const options = {
         method: 'GET',
         url: 'https://t-one-youtube-converter.p.rapidapi.com/api/v1/searchVideos',
         params: {term},
         headers: {
-          'X-RapidAPI-Key': '97ac549826msh0ef0e9a737d59bfp1a54ecjsn4dc2c6a85778',
+          'X-RapidAPI-Key': api_key,
           'X-RapidAPI-Host': 't-one-youtube-converter.p.rapidapi.com'
         }
       };
